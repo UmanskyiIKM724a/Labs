@@ -24,7 +24,7 @@ cout << "-----------------------------------------------------------------------
 
 int counter = 0;
 for (int i = 0; i < size; i++ ) {
-   if (array[i] > -1 || array[i] % 3 == 0) {
+   if (array[i] > 0 || array[i] % 3 == 0) {
     counter += 1;
    }
 }
