@@ -23,7 +23,7 @@ int main () {
     }
 
     else {
-        cout << "The sequence has only 11 terms (1 to 11)." << endl;
+        cout << "The sequence has only 11 terms (1 to 11)" << endl;
     }
 }
 
