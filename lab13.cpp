@@ -25,6 +25,7 @@ int main () {
     else {
         cout << "The sequence has only 11 terms (1 to 11)" << endl;
     }
+    
 }
 
 // Описати рекурсивну функцію для обчислення n-го члена ряду 1, 3, 5,..., 21.
