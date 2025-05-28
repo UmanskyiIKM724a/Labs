@@ -16,7 +16,7 @@ private:
         }
     };
 
-    std::vector<Element> heap;
+    vector<Element> heap;
 
 public:
     void enqueue(const T& item, int priority) {
@@ -24,14 +24,14 @@ public:
         elem.data = item;
         elem.priority = priority;
         heap.push_back(elem);
-        std::push_heap(heap.begin(), heap.end());
+        push_heap(heap.begin(), heap.end());
     }
 
     T dequeue() {
         if (heap.empty()) {
-            throw std::out_of_range("Queue is empty");
+            throw out_of_range("Queue is empty");
         }
-        std::pop_heap(heap.begin(), heap.end());
+        pop_heap(heap.begin(), heap.end());
         T item = heap.back().data;
         heap.pop_back();
         return item;
@@ -39,7 +39,7 @@ public:
 
     T peek() const {
         if (heap.empty()) {
-            throw std::out_of_range("Queue is empty");
+            throw out_of_range("Queue is empty");
         }
         return heap.front().data;
     }
@@ -49,17 +49,17 @@ public:
     }
 
     void print() const {
-        std::cout << "Priority Queue: ";
+        cout << "Priority Queue: ";
         for (size_t i = 0; i < heap.size(); ++i) {
             const Element& elem = heap[i];
-            std::cout << "(" << elem.data << ", " << elem.priority << ") ";
+            cout << "(" << elem.data << ", " << elem.priority << ") ";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 };
 
 int main() {
-    PriorityQueue<std::string> pq;
+    PriorityQueue<string> pq;
 
     pq.enqueue("Task A", 2);
     pq.enqueue("Task B", 5);
@@ -68,18 +68,18 @@ int main() {
 
     pq.print();
 
-    std::cout << "Peek: " << pq.peek() << std::endl;
+    cout << "Peek: " << pq.peek() << endl;
 
-    std::cout << "Dequeue: " << pq.dequeue() << std::endl;
+    cout << "Dequeue: " << pq.dequeue() << endl;
     pq.print();
 
-    std::cout << "Is empty: " << (pq.empty() ? "true" : "false") << std::endl;
+    cout << "Is empty: " << (pq.empty() ? "true" : "false") << endl;
 
     while (!pq.empty()) {
-        std::cout << "Dequeue: " << pq.dequeue() << std::endl;
+        cout << "Dequeue: " << pq.dequeue() << endl;
     }
 
-    std::cout << "Is empty after all dequeues: " << (pq.empty() ? "true" : "false") << std::endl;
+    cout << "Is empty after all dequeues: " << (pq.empty() ? "true" : "false") << endl;
 
     return 0;
 }
